@@ -7,7 +7,7 @@ using System.Text;
 
 namespace DataAccess.Concrete.InMemory
 {
-    public class InMemoryMemberDal : IMemberDal
+    public class InMemoryMemberDal 
     {
 
 
@@ -17,11 +17,11 @@ namespace DataAccess.Concrete.InMemory
         {
             _members = new List<Member>
             {
-                new Member{ MemberId=1, InstructorId=1, MemberName="Burak",MemberLastName="Filiz",Phone="05432223322",Address="Manisa / merkez",StartingDate=new DateTime(2022,01,1),EndDate=new DateTime(2023,04,1),MembershipFee=750,MemberDescription="ÜYE SAĞLIK SORUNU YOK."},
-                new Member{ MemberId=2, InstructorId=1, MemberName="Ceren",MemberLastName="Saldıran",Phone="05432223322",Address="Sinop / merkez",StartingDate=new DateTime(2022,04,1),EndDate=new DateTime(2023,05,1),MembershipFee=250,MemberDescription="ÜYE SAĞLIK SORUNU YOK."},
-                new Member{ MemberId=3, InstructorId=1, MemberName="İrem",MemberLastName="Saldıran",Phone="05432223322",Address="Manisa / merkez",StartingDate=new DateTime(2022,03,1),EndDate=new DateTime(2023,05,1),MembershipFee=950,MemberDescription="ÜYE SAĞLIK SORUNU YOK."},
-                new Member{ MemberId=4, InstructorId=1, MemberName="Şengün",MemberLastName="Kırlı",Phone="05432223322",Address="Manisa / merkez",StartingDate=new DateTime(2022,02,1),EndDate=new DateTime(2023,07,1),MembershipFee=140,MemberDescription="ÜYE SAĞLIK SORUNU YOK."},
-                new Member{ MemberId=5, InstructorId=1, MemberName="Mine",MemberLastName="Saldıran",Phone="05432223322",Address="Manisa / merkez",StartingDate=new DateTime(2022,01,1),EndDate=new DateTime(2023,06,1),MembershipFee=350,MemberDescription="ÜYE SAĞLIK SORUNU YOK."},
+                new Member{ MemberId=1, InstructorId=1, MemberName="Burak",MemberLastName="Filiz",Phone="05432223322",Address="Manisa / merkez",StartingDate=new DateTime(2022,01,1),EndDate=new DateTime(2023,04,1),MemberShipFee=750,MemberDescription="ÜYE SAĞLIK SORUNU YOK."},
+                new Member{ MemberId=2, InstructorId=1, MemberName="Ceren",MemberLastName="Saldıran",Phone="05432223322",Address="Sinop / merkez",StartingDate=new DateTime(2022,04,1),EndDate=new DateTime(2023,05,1),MemberShipFee=250,MemberDescription="ÜYE SAĞLIK SORUNU YOK."},
+                new Member{ MemberId=3, InstructorId=1, MemberName="İrem",MemberLastName="Saldıran",Phone="05432223322",Address="Manisa / merkez",StartingDate=new DateTime(2022,03,1),EndDate=new DateTime(2023,05,1),MemberShipFee=950,MemberDescription="ÜYE SAĞLIK SORUNU YOK."},
+                new Member{ MemberId=4, InstructorId=1, MemberName="Şengün",MemberLastName="Kırlı",Phone="05432223322",Address="Manisa / merkez",StartingDate=new DateTime(2022,02,1),EndDate=new DateTime(2023,07,1),MemberShipFee=140,MemberDescription="ÜYE SAĞLIK SORUNU YOK."},
+                new Member{ MemberId=5, InstructorId=1, MemberName="Mine",MemberLastName="Saldıran",Phone="05432223322",Address="Manisa / merkez",StartingDate=new DateTime(2022,01,1),EndDate=new DateTime(2023,06,1),MemberShipFee=350,MemberDescription="ÜYE SAĞLIK SORUNU YOK."},
             };
         }
 
@@ -52,7 +52,7 @@ namespace DataAccess.Concrete.InMemory
             memberUpdate.StartingDate = member.StartingDate;
             memberUpdate.EndDate = member.EndDate;
             memberUpdate.Address = member.Address;
-            memberUpdate.MembershipFee = member.MembershipFee;
+            memberUpdate.MemberShipFee = member.MemberShipFee;
         }
     }
 }

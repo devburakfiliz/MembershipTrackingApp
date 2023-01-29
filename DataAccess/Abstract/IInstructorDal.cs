@@ -5,9 +5,7 @@ using System.Text;
 
 namespace DataAccess.Abstract
 {
-    public interface IMemberDal : IEntityRepository<Member>
+    public interface IInstructorDal : IEntityRepository<Instructor>
     {
-     
-            
     }
 }
