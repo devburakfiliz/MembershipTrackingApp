@@ -7,6 +7,10 @@ namespace Entities.Concrete
 {
     public class Member : IEntity
     {
+        private object deletedEntity;
+
+     
+
         public int Id { get; set; }
         public int InstructorId { get; set; }
         public string MemberName { get; set; }

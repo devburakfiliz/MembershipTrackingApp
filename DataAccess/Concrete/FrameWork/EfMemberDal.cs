@@ -25,8 +25,8 @@ namespace DataAccess.Concrete.FrameWork
         {
             using (MemberContext context = new MemberContext())
             {
-                var addedEntity = context.Entry(entity);
-                addedEntity.State = EntityState.Added;
+                var deletedEntity = context.Entry(entity);
+                deletedEntity.State = EntityState.Deleted;
                 context.SaveChanges();
             }
         }
@@ -54,8 +54,8 @@ namespace DataAccess.Concrete.FrameWork
         {
             using (MemberContext context = new MemberContext())
             {
-                var addedEntity = context.Entry(entity);
-                addedEntity.State = EntityState.Added;
+                var updatedEntity = context.Entry(entity);
+                updatedEntity.State = EntityState.Modified;
                 context.SaveChanges();
             }
         }
