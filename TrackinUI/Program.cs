@@ -12,16 +12,11 @@ namespace TrackinUI
             MemberManager memberManager = new MemberManager(new EfMemberDal());
 
 
-           
 
-           
-            memberManager.Update(new Member { Id = 2, MemberName = "İrem", StartingDate = new DateTime(2023, 3, 23), EndDate = new DateTime(2023, 4, 23), Description = "Bel ağrısı var", Phone = "222", LastName = "Saldıran", Adress = "Manisa", InstructorId = 1, MemberShipFee = 44 });
 
-            memberManager.Delete(new Member()
-            {
-               
-                Id=2
-            });
+
+            memberManager.Update(new Member { Id = 7, MemberName = "İrem", StartingDate = new DateTime(2023, 3, 23), EndDate = new DateTime(2023, 4, 23), Description = "Bel ağrısı var", Phone = "222", LastName = "Saldıran", Adress = "Manisa", InstructorId = 1, MemberShipFee = 44 });
+           // Delete(memberManager);
             //foreach (var member in memberManager.GetAll())
             //{
             //    Console.WriteLine(member.MemberName + "   " + member.LastName + "  " + "ÜYELİK KALAN GÜN SAYISI : " + (member.EndDate - DateTime.Now).Days + " " + member.Adress + " " + ((int)member.MemberShipFee));
@@ -63,6 +58,15 @@ namespace TrackinUI
 
 
 
+        }
+
+        private static void Delete(MemberManager memberManager)
+        {
+            memberManager.Delete(new Member()
+            {
+
+                Id = 3
+            });
         }
     }
 }
