@@ -1,4 +1,6 @@
 ﻿using Business.Abstract;
+using Business.Constants;
+using Core.Ultilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -17,25 +19,28 @@ namespace Business.Concrete
             _memberDal = memberDal;
         }
 
-        public void Add(Member entity)
+        public IResult Add(Member entity)
         {
             _memberDal.Add(entity);
+            return new SuccessResult(Messages.MemberAdded);
         }
 
-        public void Delete(Member entity)
+        public IResult Delete(Member entity)
         {
             _memberDal.Delete(entity);
-            
+            return new SuccessResult(Messages.MemberDeleted);
+
         }
 
-        public List<Member> GetAll()
+        public IDataResult< List<Member>> GetAll()
         {
-            return _memberDal.GetAll();
+            return new SuccessDataResult<List<Member>>( _memberDal.GetAll(),Messages.MembersListed);
         }
 
-        public void Update(Member entity)
+        public IResult Update(Member entity)
         {
             _memberDal.Update(entity);
+            return new SuccessResult(Messages.MemberUpdated);
         }
     }
 }

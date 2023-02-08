@@ -19,7 +19,7 @@ namespace Entities.Concrete
         public string Adress { get; set; }
         public DateTime StartingDate { get; set; }
         public DateTime EndDate { get; set; }
-        public decimal MemberShipFee { get; set; }
+        public int MemberShipFee { get; set; }
         public string Description { get; set; }
 
 
