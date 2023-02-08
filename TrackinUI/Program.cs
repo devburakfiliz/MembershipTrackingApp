@@ -22,52 +22,63 @@ namespace TrackinUI
             //    Console.WriteLine(member.MemberName + "   " + member.LastName + "  " + "ÜYELİK KALAN GÜN SAYISI : " + (member.EndDate - DateTime.Now).Days + " " + member.Adress + " " + ((int)member.MemberShipFee));
             //}
 
-            var result =memberManager.Add(new Member()
-            {
-               
-                MemberName = "İrem",
-                LastName = "Saldıran",
-                InstructorId = 3,
-                MemberShipFee = 700,
-                StartingDate = new DateTime(2023, 2, 23),
-                EndDate = new DateTime(2023, 7, 23),
-                Adress = "Manisa/Bozköy",
-                Description = "Bel ağrısı var",
-                Phone = "0543303333"
-
-            });
-            Console.WriteLine(result.Message+result);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            //foreach (var member in memberManager.GetAll())
+            //var result =memberManager.Add(new Member()
             //{
-            //    Console.WriteLine(member.MemberName + "   " + member.LastName + "  " + "ÜYELİK KALAN GÜN SAYISI : " + (member.EndDate - DateTime.Now).Days + " " + member.Adress + " " + ((int)member.MemberShipFee));
-            //}
+
+            //    MemberName = "İrem",
+            //    LastName = "Saldıran",
+            //    InstructorId = 3,
+            //    MemberShipFee = 700,
+            //    StartingDate = new DateTime(2023, 2, 23),
+            //    EndDate = new DateTime(2023, 7, 23),
+            //    Adress = "Manisa/Bozköy",
+            //    Description = "Bel ağrısı var",
+            //    Phone = "0543303333"
+
+            //});
+            //Console.WriteLine(result.Message+result);
 
 
 
-        }
+            //MemberManager memberManager = new MemberManager(new EfMemberDal());
 
-        private static void Delete(MemberManager memberManager)
-        {
-            memberManager.Delete(new Member()
+
+
+            var result = memberManager.GetAll();
+
+            if (result.Success)
             {
+                foreach (var item in result.Data)
+                {
+                    Console.WriteLine(item.Id);
+                }
+            }
 
-                Id = 3
-            });
         }
-    }
+
+
+
+
+
+
+
+
+        
+
+
+            
+
+
+
+        }
+
+        //private static void Delete(MemberManager memberManager)
+        //{
+        //    memberManager.Delete(new Member()
+        //    {
+
+        //        Id = 3
+        //    });
+        //}
+    
 }
