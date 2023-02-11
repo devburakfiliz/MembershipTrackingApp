@@ -19,9 +19,9 @@ namespace WebAPI.Controllers
             _ınstructorImageService = ınstructorImageService;
         }
         [HttpPost("add")]
-        public IActionResult Add([FromForm] IFormFile file, [FromForm] InstructorImage carImage)
+        public IActionResult Add([FromForm] IFormFile file, [FromForm] InstructorImage ınstructorImage)
         {
-            var result = _ınstructorImageService.Add(file, carImage);
+            var result = _ınstructorImageService.Add(file, ınstructorImage);
             if (result.Success)
             {
                 return Ok(result);
@@ -29,9 +29,9 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
         [HttpPost("delete")]
-        public IActionResult Delete(InstructorImage carImage)
+        public IActionResult Delete(InstructorImage ınstructorImage)
         {
-            var carDeleteImage = _ınstructorImageService.GetByImageId(carImage.Id).Data;
+            var carDeleteImage = _ınstructorImageService.GetByImageId(ınstructorImage.Id).Data;
             var result = _ınstructorImageService.Delete(carDeleteImage);
             if (result.Success)
             {
