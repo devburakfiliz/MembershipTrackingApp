@@ -1,7 +1,9 @@
 using Business.Abstract;
 using Business.Concrete;
+using Core.Ultilities.Helpers.FileHelper;
 using DataAccess.Abstract;
 using DataAccess.Concrete.FrameWork;
+using Entities.Concrete;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -34,6 +36,9 @@ namespace WebAPI
             services.AddControllers();
             services.AddSingleton<IMemberServis, MemberManager>();
             services.AddSingleton<IMemberDal, EfMemberDal>();
+            services.AddSingleton<IInstructorImageService, InstructorImageManager>();
+            services.AddSingleton<IInstructorImageDal, EfInstructorImageDal>();
+            services.AddSingleton<IFileHelper, FileHeplerManager>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPI", Version = "v1" });

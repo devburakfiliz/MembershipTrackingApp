@@ -14,6 +14,8 @@ namespace DataAccess.Concrete.FrameWork
         }
 
         public DbSet<Member> Members  { get; set; }
+        public DbSet<Instructor> Instructors  { get; set; }
+        public DbSet<InstructorImage> ınstructorImages  { get; set; }
         
 
 
